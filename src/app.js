@@ -24,9 +24,7 @@ export default function getSpecialAttack({ special }) {
   const res = [];
 
   for (let i = 0; i < special.length; i += 1) {
-    if (!special[i].description) {
-      special[i].description = 'Описание недоступно';
-    }
+    special[i].description === undefined ? special[i].description = 'Описание недоступно' : special[i].description 
     res.push({
       id: special[i].id,
       name: special[i].name,
